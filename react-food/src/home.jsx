@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import logo from './assets/Images/headerImage/creditCard.jpeg'
+import CarouselContents from './carousel'
 import './Scss/home.css'
 
 
@@ -29,9 +30,12 @@ const Home = () => {
         <h1>
         Variables are names that store data, such as numbers, text, or boolean values. 
         By creating instructions for computers to perform tasks using languages that they can understand.
-        When you turn on your smartphone, browse the web, or use any electronic device, you’re interacting with code written by developers. They create the programs that make these devices work.
+        When you turn on your smartphone, browse the web, or use any electronic device, you're interacting with code written by developers. They create the programs that make these devices work.
         </h1>
       </marquee>
+    </div>
+    <div className="carousel-wrap">
+      <CarouselContents />
     </div>
    </div>
   )

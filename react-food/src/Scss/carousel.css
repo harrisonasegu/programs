@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contentStyle {
+  width: 100%;
+  color: #fff;
+}
+.contentStyle img {
+  width: 100%;
+  height: 400px;
+}/*# sourceMappingURL=carousel.css.map */
