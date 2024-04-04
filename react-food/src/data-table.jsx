@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Button, Form, Input, Popconfirm, Table } from 'antd';
+<Icon icon="mdi-light:home" />;
+import { Icon } from '@iconify/react';
 const EditableContext = React.createContext(null);
 const EditableRow = ({ index, ...props }) => {
   const [form] = Form.useForm();
@@ -77,6 +79,11 @@ const EditableCell = ({
   }
   return <td {...restProps}>{childNode}</td>;
 };
+const trashColor = () => {
+  return {
+    color: 'red'
+  }
+};
 const App = () => {
   const [dataSource, setDataSource] = useState([
     {
@@ -99,29 +106,35 @@ const App = () => {
   };
   const defaultColumns = [
     {
-      title: 'name',
+      title: 'Name',
       dataIndex: 'name',
       width: '30%',
       editable: true,
     },
     {
-      title: 'age',
+      title: 'Age',
       dataIndex: 'age',
     },
     {
-      title: 'address',
+      title: 'Address',
       dataIndex: 'address',
     },
     {
-      title: 'operation',
+      title: 'Operation',
       dataIndex: 'operation',
       render: (_, record) =>
         dataSource.length >= 1 ? (
           <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record.key)}>
-            <a>Delete</a>
+              <a>
+           <Icon icon="fluent:edit-28-regular" width="20" height="20"  style={trashColor} />
+           </a>
+            <a><Icon icon="ion:trash-sharp" width="20" height="20" style={trashColor} />
+            </a>
+         
           </Popconfirm>
         ) : null,
     },
+    
   ];
   const handleAdd = () => {
     const newData = {
