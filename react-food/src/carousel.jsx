@@ -7,7 +7,7 @@ import './Scss/carousel.css'
 import { Carousel } from 'antd';
 
 const carouselContents = () => (
-  <Carousel autoplay>
+  <Carousel autoplay className='contentStyle-wrap'>
     <div className='contentStyle'>
  
      {/* <h3 style={contentStyle}>1</h3> */}

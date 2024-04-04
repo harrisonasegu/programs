@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import logo from './assets/Images/headerImage/creditCard.jpeg'
 import CarouselContents from './carousel'
+import DataTable from './data-table'
 import './Scss/home.css'
 
 
@@ -36,6 +37,9 @@ const Home = () => {
     </div>
     <div className="carousel-wrap">
       <CarouselContents />
+    </div>
+    <div className="table-section">
+      <DataTable />
     </div>
    </div>
   )

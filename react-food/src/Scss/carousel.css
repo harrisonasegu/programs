@@ -4,11 +4,14 @@
   box-sizing: border-box;
 }
 
-.contentStyle {
+.contentStyle-wrap {
+  margin-bottom: 30px;
+}
+.contentStyle-wrap .contentStyle {
   width: 100%;
   color: #fff;
 }
-.contentStyle img {
+.contentStyle-wrap .contentStyle img {
   width: 100%;
   height: 400px;
 }/*# sourceMappingURL=carousel.css.map */
