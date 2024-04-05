@@ -1,13 +1,34 @@
 
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import logo from './assets/Images/headerImage/creditCard.jpeg'
 import CarouselContents from './carousel'
 import DataTable from './data-table'
 import './Scss/home.css'
 
+import DataTable from "./data-table";
+// import Blogs from "./pages/Blogs";
+// import Contact from "./pages/Contact";
+// import NoPage from "./pages/NoPage";
+
 
 const Home = () => {
+
+  const headerLink = () => {
+    return (
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DataTable />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    )
+  }
 
   return(
    <div className="wrap">
@@ -15,7 +36,7 @@ const Home = () => {
       <div className="log">
         <img src={logo} alt="myLogo" />
       </div>
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             <a href="">Home</a>
@@ -24,7 +45,10 @@ const Home = () => {
             <a href="">Home</a>
           </li>
         </ul>
-      </nav>
+      </nav> */}
+
+      <headerLink />
+
     </header>
     <div className="moving-animation">
       <marquee behavior="" direction="">
